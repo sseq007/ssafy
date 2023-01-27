@@ -1,4 +1,4 @@
-package 알고리즘스터디;
+package 알고리즘스터디.Backjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
