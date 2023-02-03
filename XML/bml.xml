@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="euc-kr"?>
+
+<!DOCTYPE booklist SYSTEM "bml.dtd">
+
+<booklist>
+	<book kind="컴퓨터">
+		<title>스티브 잡스 그는 누구인가</title>
+		<author>스티브</author>
+		<publisher>애폴</publisher>
+		<price>20000</price>
+	</book>
+	<book kind="소설">
+		<title>한여자</title>
+		<author>하지운</author>
+		<publisher>아롱출판사</publisher>
+		<price>9000</price>
+	</book>
+	<book kind="컴퓨터">
+		<title>대박 아이템</title>
+		<author>나대박</author>
+		<publisher>대박 출판사</publisher>
+		<price>25000</price>
+	</book>
+</booklist>
