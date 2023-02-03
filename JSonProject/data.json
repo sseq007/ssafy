@@ -1,0 +1,19 @@
+{
+      "resMsg": "suc",
+      "result": {
+          "rec": [
+              {
+                  "ADDR": "seoul addr1"
+              },
+              {
+                  "ADDR": "seoul addr2"
+              },
+              {
+                  "ADDR": "seoul addr3"
+              },
+              {
+                  "ADDR": "seoul addr4"
+              }
+          ]
+      }
+  }
