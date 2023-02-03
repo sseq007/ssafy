@@ -45,7 +45,6 @@ public class WeatherSaxParser {
 			sb.append(ch,start,length);
 		}
 
-		@Override
 		public void endElement(String uri, String localName, String name) throws SAXException {
 			super.endElement(uri, localName, name);
 			if (this.w != null){
@@ -58,15 +57,14 @@ public class WeatherSaxParser {
 				}
 				else if (name.equalsIgnoreCase("reh")){
 					w.setReh(sb.toString().trim());
-				} else if (name.equalsIgnoreCase("img")){
-				   w.setImg(sb.toString().trim());
+				} else if (name.equalsIgnoreCase("wfEn")){
+				   w.setWfEn(sb.toString().trim());
 				}else if (name.equalsIgnoreCase("data")){
 				     list.add(w);
 				}
 				sb.setLength(0);	
 			}
 		}
-
 		@Override
 		public void startDocument() throws SAXException {
 			super.startDocument();
@@ -79,7 +77,7 @@ public class WeatherSaxParser {
 			super.startElement(uri, localName, name, attributes);
 //			TODO: Override 하세요.
 			if(name.equalsIgnoreCase("data")) {
-				
+				sb = new StringBuilder();
 				w= new WeatherDto();
 			
 			}

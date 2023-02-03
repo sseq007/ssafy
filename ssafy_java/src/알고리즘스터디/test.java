@@ -13,7 +13,7 @@ public class test {
 					break loop;
 				}
 			}
-			Integer.
+
 		}
 		System.out.println("-1-1");
 	}

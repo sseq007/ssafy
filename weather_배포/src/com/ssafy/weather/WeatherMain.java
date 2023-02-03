@@ -92,7 +92,7 @@ public class WeatherMain extends JFrame {
 			Object[][] data = new Object[datas.size()][5];
 			for (WeatherDto weather : datas) {
 				System.out.println(weather.toString());
-				ImageIcon icon = new ImageIcon("img/" + weather.getImg());
+				ImageIcon icon = new ImageIcon("./src/img/" + weather.getWfEn()+".png");
 				Image image = icon.getImage();
 				Image changeImage = image.getScaledInstance(70, 55, Image.SCALE_SMOOTH);
 				ImageIcon changeIcon = new ImageIcon(changeImage);
@@ -117,11 +117,11 @@ public class WeatherMain extends JFrame {
 		TableColumnModel tcm = weatherTable.getColumnModel(); // 정렬할 테이블의 컬럼모델을 가져옴
 
 //		 전체 열에 지정
-		 for(int i = 0 ; i < tcm.getColumnCount() ; i++){
-		 tcm.getColumn(i).setCellRenderer(dtcr);
+//		 for(int i = 0 ; i < tcm.getColumnCount() ; i++){
+//		 tcm.getColumn(i).setCellRenderer(dtcr);
 //		 컬럼모델에서 컬럼의 갯수만큼 컬럼을 가져와 for문을 이용하여
 //		 각각의 셀렌더러를 아까 생성한 dtcr에 set해줌
-		 }
+//		 }
 
 		// 특정 열에 지정
 //		tcm.getColumn(0).setCellRenderer(dtcr);
