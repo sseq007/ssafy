@@ -1,52 +1,57 @@
-package ssafy.com.알고리즘.Backjoon;
+package ssafy.com.lecture.day01.problem.homework;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-//N과 M(4)
-public class Problem15652 {
+//N과 M(3)
+/*
+ * 중복 순열
+ * */
+public class BOJ15651 {
 
 	static int n,m;
 	static int[] arr;
 	static StringBuilder sb = new StringBuilder();
-	static StringTokenizer st;
+
 	
 	public static void main(String[] args) throws IOException {
-	
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		st = new StringTokenizer(br.readLine());
+		StringTokenizer st = new StringTokenizer(br.readLine());
 		
 		n = Integer.parseInt(st.nextToken());
 		m = Integer.parseInt(st.nextToken());
-		
 		arr = new int[m];
 		
-		
-		dfs(1,0);
+		recur(0);
 		
 		System.out.println(sb);
 		
-		
-		
 	}
-	
-	private static void dfs(int s,int depth) {
-		
-		if(depth==m) {
+	/*
+	 * arr[] : 담는 배열
+	 * d : 담는배열 인덱스
+	 * 
+	 * */
+
+
+	private static void recur(int d) {
+		//basis part
+		if(d==arr.length) {
 			for(int i=0;i<arr.length;i++) {
-				sb.append(arr[i]).append(' ');
-			}sb.append("\n");
-			
+				sb.append(arr[i]).append(" ");
+			}
+			sb.append("\n");
 			return;
 		}
 		
-		for(int i=s;i<=n;i++) {
-			arr[depth]=i;
-			dfs(i,depth+1);
+		//inductive part
+		for(int i=1;i<=n;i++) {
+			arr[d]=i;
+			recur(d+1);
 		}
-		
 	}
 }

@@ -1,4 +1,4 @@
-package ssafy.com.lecture.day01.problem;
+package ssafy.com.lecture.day01.problem.homework;
 
 import java.io.BufferedReader;
 import java.io.IOException;
