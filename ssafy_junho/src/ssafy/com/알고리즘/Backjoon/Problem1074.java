@@ -6,10 +6,17 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 //Z
+/*
+ * 재귀를 돌며 size를 2씩 나누어 4구역으로 나눈다
+ * 규칙
+ * 1사분면 -> size제곱*1
+ * 2사분면 -> 0
+ * 3사분면 -> size제곱*2
+ * 4사분면 -> size제곱*3
+ * */
 public class Problem1074 {
 
-	static int[][] arr;
-	static int n,r,c,new_idx;
+	static int n,r,c,result;
 	static StringTokenizer st;
 	public static void main(String[] args) throws IOException {
 	
@@ -19,32 +26,40 @@ public class Problem1074 {
 		n = Integer.parseInt(st.nextToken());
 		r = Integer.parseInt(st.nextToken());
 		c = Integer.parseInt(st.nextToken());
+		result=0;
+		int size = (int) Math.pow(2, n);
+		recur(0,0,size);
 		
-		arr = new int[(int) Math.pow(2, n)][(int) Math.pow(2, n)];
-		
-		new_idx = (int) Math.pow(2, n-1);
-		
-		dfs(0,0,0);
+		System.out.println(result);
 		
 		
 	}
-	private static void dfs(int x,int y,int count) {
-		if(x==r&&y==c) {
+	private static void recur(int x,int y,int size) {
+		
+		if(size ==1) {
 			return;
 		}
-		if(n==1) {
-			return;
+		
+		//2사분면일떄
+		if(r<x+size/2&&c<y+size/2) {
+			recur(x, y, size/2);
 		}
 		
-		if(x<new_idx&&y<new_idx)
-		arr[x][y]=count;
-		arr[x][y+1]=count+1;
-		arr[x+1][y]=count+2;
-		arr[x+1][y+1]=count+3;
-		
-//		dfs(x+2);
-//		
-		
+		//1사분면일떄
+		if(r<x+size/2&&c>=y+size/2) {
+			result+=(int)Math.pow(size/2, 2);
+			recur(x, y+size/2, size/2);
+		}
+		//3사분면일떄
+		if(r>=x+size/2&&c<y+size/2) {
+			result+=(int)Math.pow(size/2, 2)*2;
+			recur(x+size/2, y, size/2);
+		}
+		//4사분면일때
+		else {
+			result+=(int)Math.pow(size/2, 2)*3;
+			recur(x+size/2, y+size/2, size/2);
+		}
 	}
 	
 

@@ -1,45 +1,47 @@
-package ssafy.com.lecture.day01.problem.homework;
-
+package ssafy.com.lecture.day0206.problem.homework;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-//N과 M(2)
+//N과 M(3)
 /*
- * 순열(중복X,오름차순)
- * 
+ * 중복 순열
  * */
-public class BOJ15650 {
+public class BOJ15651 {
 
-	static StringBuilder sb= new StringBuilder();
-	static int[] arr;
 	static int n,m;
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	static int[] arr;
+	static StringBuilder sb = new StringBuilder();
+
 	
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
 		n = Integer.parseInt(st.nextToken());
 		m = Integer.parseInt(st.nextToken());
-		
 		arr = new int[m];
 		
-		recur(1,0);
+		recur(0);
+		
 		System.out.println(sb);
+		
 	}
-
 	/*
 	 * arr[] : 담는 배열
 	 * d : 담는배열 인덱스
-	 * s : 배열 시작 인덱스
 	 * 
 	 * */
-	public static void recur(int s, int d) {
+
+
+	private static void recur(int d) {
 		//basis part
 		if(d==arr.length) {
-			for(int i=0; i<arr.length;i++) {
+			for(int i=0;i<arr.length;i++) {
 				sb.append(arr[i]).append(" ");
 			}
 			sb.append("\n");
@@ -47,11 +49,9 @@ public class BOJ15650 {
 		}
 		
 		//inductive part
-		for(int i=s;i<=n;i++) {
+		for(int i=1;i<=n;i++) {
 			arr[d]=i;
-			recur(i+1,d+1);
+			recur(d+1);
 		}
 	}
-
-	
 }
