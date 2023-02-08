@@ -56,7 +56,7 @@ public class Problem1074 {
 			recur(x+size/2, y, size/2);
 		}
 		//4사분면일때
-		else {
+		if(r>=x+size/2&&c>=y+size/2) {
 			result+=(int)Math.pow(size/2, 2)*3;
 			recur(x+size/2, y+size/2, size/2);
 		}
