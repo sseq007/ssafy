@@ -1,4 +1,4 @@
-package ssafy.com.¾Ë°í¸®Áò.Backjoon;
+package ssafy.com.ì•Œê³ ë¦¬ì¦˜.Backjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,8 +43,8 @@ public class Problem16987 {
 		
 		int start_es = egg_stregth[idx];
 		int start_ew = egg_weight[idx];
-		System.out.println("Ã³À½ °è¶õ ³»±¸µµ"+start_es);
-		System.out.println("Ã³À½ °è¶õ ¹«°Ô"+start_ew);
+		System.out.println("Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"+start_es);
+		System.out.println("Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½"+start_ew);
 		if (start_es <= 0 || allbroken()) {
 			recur(idx + 1);
 		} else {
@@ -52,8 +52,8 @@ public class Problem16987 {
 			for (int i = 0; i < n; i++) {
 				if (i == idx) continue;
 				if (egg_broken[i]) continue;
-				start_es -= egg_weight[i]; // ¿ÞÂÊ°è¶õ Ä¡±â
-				egg_stregth[i] -= start_ew; // ¿À¸¥ÂÊ °è¶õ Ä¡±â
+				start_es -= egg_weight[i]; // ï¿½ï¿½ï¿½Ê°ï¿½ï¿½ Ä¡ï¿½ï¿½
+				egg_stregth[i] -= start_ew; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Ä¡ï¿½ï¿½
 				if (start_es <= 0) {
 					egg_broken[idx] = true;
 				}
@@ -64,8 +64,8 @@ public class Problem16987 {
 				recur(idx + 1);
 				
 				egg_broken = Arrays.copyOf(egg_temp, n);
-				start_es += egg_weight[i]; // ¿ÞÂÊ°è¶õ Ä¡±â
-				egg_stregth[i] += start_ew; // ¿À¸¥ÂÊ °è¶õ Ä¡±â
+				start_es += egg_weight[i]; // ï¿½ï¿½ï¿½Ê°ï¿½ï¿½ Ä¡ï¿½ï¿½
+				egg_stregth[i] += start_ew; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ Ä¡ï¿½ï¿½
 
 				
 

@@ -1,4 +1,4 @@
-package ssafy.com.lecture.day0206.APS�⺻;
+package ssafy.com.lecture.day0206.APS기본;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-class �似Ǫ�� {
+class 요세푸스 {
 
 	public static void main(String[] args) throws Exception, IOException  {
 		

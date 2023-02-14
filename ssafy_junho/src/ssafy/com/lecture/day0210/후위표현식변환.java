@@ -3,16 +3,16 @@ package ssafy.com.lecture.day0210;
 import java.util.Iterator;
 import java.util.Stack;
 
-public class ÈÄÀ§Ç¥Çö½Äº¯È¯ {
+public class í›„ìœ„í‘œí˜„ì‹ë³€í™˜ {
 
 	/*
-	 * 1. ¼ýÀÚÀÏ °æ¿ì ±×³É Ãâ·Â.
-	 * 2. + ³ª *°¡ ³ª¿À¸é ½ºÅÃÀ» È®ÀÎÇÑ´Ù.
-	 * 		2-1. ½ºÅÃÀÌ ºñ¾îÀÖÀ¸¸é push
-	 * 		2-2	 ½ºÅÃÀÌ ºñ¾îÀÖÁö ¾ÊÀ¸¸é * °¡ + º¸´Ù ¿¬»ê¼øÀ§°¡ ³ô´Ù
-	 * 			2-2-1. ÀÐ¾îµéÀÎ ¿¬»êÀÚ°¡ ½ºÅÃÀÇ Å¾º¸´Ù ¿ì¼±¼øÀ§°¡ ³ôÀ¸¸é ±×³É push
-	 * 			2-2-2. ÀÐ¾îµéÀÎ ¿¬»êÀÚ°¡ ½ºÅÃÀÇ Å¾º¸´Ù °°°Å³ª,³·Àº°æ¿ì Å¾À» popÇÏ°í Ãâ·Â
-	 * 				     ½ºÅÃÀÇ push
+	 * 1. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½×³ï¿½ ï¿½ï¿½ï¿½.
+	 * 2. + ï¿½ï¿½ *ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ñ´ï¿½.
+	 * 		2-1. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ push
+	 * 		2-2	 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ * ï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	 * 			2-2-1. ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¾ï¿½ï¿½ï¿½ï¿½ ï¿½ì¼±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×³ï¿½ push
+	 * 			2-2-2. ï¿½Ð¾ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¾ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å³ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¾ï¿½ï¿½ popï¿½Ï°ï¿½ ï¿½ï¿½ï¿½
+	 * 				     ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ push
 	 * 			2
 	 * 
 	 * */
@@ -23,13 +23,13 @@ public class ÈÄÀ§Ç¥Çö½Äº¯È¯ {
 		Stack<Character> s = new Stack<Character>();
 		StringBuffer sb = new StringBuffer();
 		
-		//exprÀ» ÇÑÀÚ¾¿ ÀÐ½À´Ï´Ù
+		//exprï¿½ï¿½ ï¿½ï¿½ï¿½Ú¾ï¿½ ï¿½Ð½ï¿½ï¿½Ï´ï¿½
 		for (int i = 0; i < expr.length(); i++) {
 			char c = expr.charAt(i);
-			//¼ýÀÚ¸é Ãâ·Â
+			//ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½
 			if(Character.isDigit(c)) sb.append(c);
 			else if(c=='+') {
-				//ºñ¾îÀÖ´ÂÁö È®ÀÎÇÏ°í 
+				//ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï°ï¿½ 
 				while(!s.isEmpty()) {
 					sb.append(s.pop());
 				}

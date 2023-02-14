@@ -1,4 +1,4 @@
-package ssafy.com.¾Ë°í¸®Áò.Backjoon;
+package ssafy.com.ì•Œê³ ë¦¬ì¦˜.Backjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,12 +7,12 @@ import java.util.StringTokenizer;
 
 //Z
 /*
- * Àç±Í¸¦ µ¹¸ç size¸¦ 2¾¿ ³ª´©¾î 4±¸¿ªÀ¸·Î ³ª´«´Ù
- * ±ÔÄ¢
- * 1»çºÐ¸é -> sizeÁ¦°ö*1
- * 2»çºÐ¸é -> 0
- * 3»çºÐ¸é -> sizeÁ¦°ö*2
- * 4»çºÐ¸é -> sizeÁ¦°ö*3
+ * ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ sizeï¿½ï¿½ 2ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ * ï¿½ï¿½Ä¢
+ * 1ï¿½ï¿½Ð¸ï¿½ -> sizeï¿½ï¿½ï¿½ï¿½*1
+ * 2ï¿½ï¿½Ð¸ï¿½ -> 0
+ * 3ï¿½ï¿½Ð¸ï¿½ -> sizeï¿½ï¿½ï¿½ï¿½*2
+ * 4ï¿½ï¿½Ð¸ï¿½ -> sizeï¿½ï¿½ï¿½ï¿½*3
  * */
 public class Problem1074 {
 
@@ -40,22 +40,22 @@ public class Problem1074 {
 			return;
 		}
 		
-		//2»çºÐ¸éÀÏ‹š
+		//2ï¿½ï¿½Ð¸ï¿½ï¿½Ï‹ï¿½
 		if(r<x+size/2&&c<y+size/2) {
 			recur(x, y, size/2);
 		}
 		
-		//1»çºÐ¸éÀÏ‹š
+		//1ï¿½ï¿½Ð¸ï¿½ï¿½Ï‹ï¿½
 		if(r<x+size/2&&c>=y+size/2) {
 			result+=(int)Math.pow(size/2, 2);
 			recur(x, y+size/2, size/2);
 		}
-		//3»çºÐ¸éÀÏ‹š
+		//3ï¿½ï¿½Ð¸ï¿½ï¿½Ï‹ï¿½
 		if(r>=x+size/2&&c<y+size/2) {
 			result+=(int)Math.pow(size/2, 2)*2;
 			recur(x+size/2, y, size/2);
 		}
-		//4»çºÐ¸éÀÏ¶§
+		//4ï¿½ï¿½Ð¸ï¿½ï¿½Ï¶ï¿½
 		if(r>=x+size/2&&c>=y+size/2) {
 			result+=(int)Math.pow(size/2, 2)*3;
 			recur(x+size/2, y+size/2, size/2);

@@ -3,7 +3,7 @@ package ssafy.com.lecture.day0210;
 import java.util.Iterator;
 import java.util.Stack;
 
-public class ÈÄÀ§Ç¥Çö½Ä°è»ê±â {
+public class í›„ìœ„í‘œí˜„ì‹ê³„ì‚°ê¸° {
 
 	public static void main(String[] args) {
 		String expr = "234*5*+6+";
@@ -15,9 +15,9 @@ public class ÈÄÀ§Ç¥Çö½Ä°è»ê±â {
 			
 			if(Character.isDigit(c)) s.push(c-'0');
 			
-			//¿¬»êÀÚ¶ó¸é
+			//ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½ï¿½
 			else if(c=='+'||c=='*'||c=='-'||c=='/') {
-				//µÎ¹ø popÇØ¼­ ¿¬»êÈÄ¿¡ ´Ù½Ã Çª½¬ÇÑ´Ù
+				//ï¿½Î¹ï¿½ popï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ ï¿½Ù½ï¿½ Çªï¿½ï¿½ï¿½Ñ´ï¿½
 				int n2 = s.pop();
 				int n1 = s.pop();
 				

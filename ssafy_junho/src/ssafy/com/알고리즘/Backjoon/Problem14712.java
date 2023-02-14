@@ -1,11 +1,11 @@
-package ssafy.com.¾Ë°í¸®Áò.Backjoon;
+package ssafy.com.ì•Œê³ ë¦¬ì¦˜.Backjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-//³Û¸ð³Û¸ð(Easy)
+//ï¿½Û¸ï¿½Û¸ï¿½(Easy)
 public class Problem14712 {
 
 	static int[][] board;

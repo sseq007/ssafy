@@ -1,4 +1,4 @@
-package ssafy.com.¾Ë°í¸®Áò.Backjoon;
+package ssafy.com.ì•Œê³ ë¦¬ì¦˜.Backjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 
-//»ó±ÙÀÌÀÇ ¿©Çà
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 public class Problem9372 {
 
 	static LinkedList<Integer>[] list;

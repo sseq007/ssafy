@@ -1,4 +1,4 @@
-package ssafy.com.¾Ë°í¸®Áò.Backjoon;
+package ssafy.com.ì•Œê³ ë¦¬ì¦˜.Backjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-//ºÎµîÈ£
+//ï¿½Îµï¿½È£
 /*
- * int·Î ÇÒ½Ã numberformatexceptionÅÍÁü -> longÀ¸·Î ´ëÃ¼
+ * intï¿½ï¿½ ï¿½Ò½ï¿½ numberformatexceptionï¿½ï¿½ï¿½ï¿½ -> longï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼
  * 
- * ¼ø¿­·Î °æ¿ìÀÇ ¼ö¸¦ »ÌÀº ´ÙÀ½ ºÎµîÈ£ Ã³¸®¸¦ ÇÑ´Ù
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½È£ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½
  * 
  * */
 public class Problem2529 {

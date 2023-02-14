@@ -6,8 +6,8 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 
-//Ä«µå 2
-public class Ä«µå2 {
+//Ä«ï¿½ï¿½ 2
+public class ì¹´ë“œ2 {
 
 	static Queue<Integer> q = new LinkedList<Integer>();
 	public static void main(String[] args) throws Exception, IOException {
@@ -16,7 +16,7 @@ public class Ä«µå2 {
 		
 		int n = Integer.parseInt(br.readLine());
 		
-		//Å¥¿¡ 1~n±îÁö ³Ö±â
+		//Å¥ï¿½ï¿½ 1~nï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½
 		for(int i=1;i<=n;i++) {
 			q.add(i);
 		}

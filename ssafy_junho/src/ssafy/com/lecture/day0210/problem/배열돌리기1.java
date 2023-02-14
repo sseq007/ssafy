@@ -1,7 +1,7 @@
 package ssafy.com.lecture.day0210.problem;
 import java.util.*;
 import java.io.*;
-public class ¹è¿­µ¹¸®±â1 {
+public class ë°°ì—´ëŒë¦¬ê¸°1 {
 	static int[][] dir = {{0,1},{1,0},{0,-1},{-1,0}};
 
 	public static void main(String[] args)throws Exception {
@@ -10,7 +10,7 @@ public class ¹è¿­µ¹¸®±â1 {
 		int N = Integer.parseInt(st.nextToken());
 		int M = Integer.parseInt(st.nextToken());
 		int R= Integer.parseInt(st.nextToken());
-		//¹è¿­ A
+		//ï¿½è¿­ A
 		int[][] arr = new int[N][M];
 		
 		for(int i=0;i<N;i++) {
@@ -20,7 +20,7 @@ public class ¹è¿­µ¹¸®±â1 {
 			}
 		}
 		
-		//R¹ø È¸Àü½ÃÅ´
+		//Rï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½Å´
 	
 		
 		int square = Math.min(N, M)/2;

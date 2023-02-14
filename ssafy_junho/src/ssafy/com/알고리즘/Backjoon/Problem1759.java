@@ -1,4 +1,4 @@
-package ssafy.com.¾Ë°í¸®Áò.Backjoon;
+package ssafy.com.ì•Œê³ ë¦¬ì¦˜.Backjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-//¾ÏÈ£ ¸¸µé±â
+//ï¿½ï¿½È£ ï¿½ï¿½ï¿½ï¿½ï¿½
 /*
- * Á¶ÇÕÀ¸·Î °æ¿ìÀÇ ¼ö »Ì±â
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì±ï¿½
  * */
 public class Problem1759 {
 
@@ -64,7 +64,7 @@ public class Problem1759 {
 	}
 	private static boolean check(String str) {
 		int con=0;
-		//ÀÚÀ½ ¸ðÀ½ °³¼ö »Ì±â
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì±ï¿½
 		for(int i=0;i<str.length();i++) {
 			for(int j=0;j<alp.length;j++) {
 				if(str.charAt(i)==alp[j]) {

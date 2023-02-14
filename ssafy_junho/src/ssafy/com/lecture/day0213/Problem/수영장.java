@@ -7,10 +7,10 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /*
- * 1ÀÏ, 1´Ş, 3´Ş, 1³â
+ * 1ï¿½ï¿½, 1ï¿½ï¿½, 3ï¿½ï¿½, 1ï¿½ï¿½
  * 
  * */
-public class ¼ö¿µÀå {
+public class ìˆ˜ì˜ì¥ {
 
 	static int[] price;
 	static month_plan[] plan;

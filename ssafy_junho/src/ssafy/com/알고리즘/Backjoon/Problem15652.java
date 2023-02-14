@@ -1,11 +1,11 @@
-package ssafy.com.¾Ë°í¸®Áò.Backjoon;
+package ssafy.com.ì•Œê³ ë¦¬ì¦˜.Backjoon;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-//N°ú M(4)
+//Nï¿½ï¿½ M(4)
 public class Problem15652 {
 
 	static int n,m;

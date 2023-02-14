@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class ¾ÏÈ£»ı¼º±â {
+public class ì•”í˜¸ìƒì„±ê¸° {
 
 	public static void main(String[] args) throws Exception, IOException {
 		

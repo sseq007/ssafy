@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
-public class °ıÈ£Â¦Áş±â {
+public class ê´„í˜¸ì§ì§“ê¸° {
 	
 	static HashMap<Character, Integer> hm_left;
 	static HashMap<Character, Integer> hm_right;
