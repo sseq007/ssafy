@@ -49,11 +49,11 @@ public class MyArrayList implements IList {
 	@Override
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
-		Node tmp = head;
-		while(tmp!=null) {
-			sb.append(tmp.obj+",");
-			
-		}
+//		Node tmp = head;
+//		while(tmp!=null) {
+//			sb.append(tmp.obj+",");
+//			
+//		}
 		return super.toString();
 	}
 	
