@@ -3,7 +3,7 @@ package ssafy.com.lecture.day0209;
 import java.util.Arrays;
 
 /*
- * ¹è¿­ÀÇ ºÎºÐÁýÇÕ ±¸ÇÏ±â --> ºÎºÐÁýÇÕ = Á¶ÇÕÀÇ ¸ðµç ÁýÇÕ
+ * ï¿½è¿­ï¿½ï¿½ ï¿½Îºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½ --> ï¿½Îºï¿½ï¿½ï¿½ï¿½ï¿½ = ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  * 
  * 
  * */
@@ -14,17 +14,17 @@ public class Recursive13 {
 		int[] arr = {1,3,5};
 		
 		recursive(arr,new boolean[arr.length],0,0);
-		System.out.println("°æ¿ìÀÇ ¼ö :"+cnt);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ :"+cnt);
 	}
 	
 	/*
-	 * arr[] : ¿øº» ¹è¿­ sel[] : ´ã´Â ¹è¿­ s : ¿øº»¹è¿­ ÀÎµ¦½º
+	 * arr[] : ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­ sel[] : ï¿½ï¿½ï¿½ ï¿½è¿­ s : ï¿½ï¿½ï¿½ï¿½ï¿½è¿­ ï¿½Îµï¿½ï¿½ï¿½
 	 * 
 	 */
 	private static void recursive(int[] arr, boolean[] sel, int idx, int k) {
 		// basis part
 		if (idx == arr.length) {
-//			System.out.println(Arrays.toString(sel));
+			System.out.println(Arrays.toString(sel));
 
 			for (int i = 0; i < sel.length; i++) {
 				if (k == 2) {
