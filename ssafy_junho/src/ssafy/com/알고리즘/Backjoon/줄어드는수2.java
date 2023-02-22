@@ -6,20 +6,22 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class 줄어드는수 {
+public class 줄어드는수2 {
 
 	static int n;
 	static ArrayList<Long> arr;
 	static int[] nums = {9,8,7,6,5,4,3,2,1,0};
+	static boolean[] v;
 	public static void main(String[] args) throws Exception, IOException {
 		BufferedReader br  = new BufferedReader(new InputStreamReader(System.in));
 		n= Integer.parseInt(br.readLine());
 		arr = new ArrayList<Long>();
+		v = new boolean[10];
 		recur(0,0);
 		
 		Collections.sort(arr);
 		
-		if(n>1023) {
+		if(n>=1023) {
 			System.out.println(-1);
 		}
 		else System.out.println(arr.get(n-1));
@@ -30,7 +32,6 @@ public class 줄어드는수 {
 		
 		//중복되는 값 제거
 		if(!arr.contains(val)) {
-//			System.out.println(val);
 			arr.add(val);
 			
 		}
@@ -42,7 +43,14 @@ public class 줄어드는수 {
 		
 		//inductive part
 		
-		recur(idx+1, val*10+nums[idx]);
+		for(int i=0;i<10;i++) {
+			if(!v[i]) {
+				v[i]=true;
+				
+				recur(idx+1, val*10+nums[idx]);
+				
+			}
+		}
 		recur(idx+1, val);
 		
 		

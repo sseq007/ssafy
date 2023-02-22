@@ -26,12 +26,16 @@ public class 월드컵 {
 		for(int t=0;t<4;t++) {
 			c = new Country[6];
 			st = new StringTokenizer(br.readLine());
-			
+			boolean flag = false;
 			for(int i=0;i<6;i++) {
 				int a= Integer.parseInt(st.nextToken());
 				int b= Integer.parseInt(st.nextToken());
 				int d= Integer.parseInt(st.nextToken());
 				c[i]= new Country(a, b, d);
+				if(a+b+d!=5) {
+					flag = true;
+					break;
+				}
 			}
 			
 			
