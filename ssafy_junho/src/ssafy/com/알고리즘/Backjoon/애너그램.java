@@ -27,8 +27,9 @@ public class 애너그램 {
 			sel = new char[alp.length];
 			tmp = new char[alp.length];
 			v= new boolean[alp.length];
+			//오름차순 정렬
+			Arrays.sort(alp);
 			recur(0);
-			Collections.sort(arr);
 			for (int i = 0; i < arr.size(); i++) {
 				sb.append(arr.get(i)).append("\n");
 			}
@@ -49,9 +50,10 @@ public class 애너그램 {
 		
 		//inductive part
 		
-		tmp[idx]=0;
+		//중복 방지
+		tmp[idx]=' ';
 		for(int i=0;i<alp.length;i++) {
-			if(!v[i]&&tmp[idx]<alp[i]) {
+			if(!v[i]&&tmp[idx]!=alp[i]) {
 				tmp[idx]=alp[i];
 //				System.out.println(tmp[idx]);
 				v[i]=true;

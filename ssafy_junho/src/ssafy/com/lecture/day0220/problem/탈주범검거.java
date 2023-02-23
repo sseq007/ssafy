@@ -59,95 +59,55 @@ public class 탈주범검거 {
 				
 				return;
 			}
-			while(q.size()!=0) {
-				
-			}
-			Point p = q.poll();
-			if (map[p.x][p.y] == 1) {
-				for (int i = 0; i < 4; i++) {
-					int nx = p.x + dx[i];
-					int ny = p.y + dy[i];
-					if (check(nx, ny)) {
-						v[nx][ny] = true;
-						q.offer(new Point(nx, ny));
-					}
-				}
-			}
-			else if (map[p.x][p.y] == 2) {
-				for (int i = 0; i <2 ; i++) {
-					int nx = p.x + dx[i];
-					int ny = p.y + dy[i];
-					if (check(nx, ny)) {
-						v[nx][ny] = true;
-						q.offer(new Point(nx, ny));
-					}
-				}
-			}
-			else if (map[p.x][p.y] == 3) {
-				for (int i = 2; i < 4; i++) {
-					int nx = p.x + dx[i];
-					int ny = p.y + dy[i];
-					if (check(nx, ny)) {
-						v[nx][ny] = true;
-						q.offer(new Point(nx, ny));
-					}
-				}
-			}
-			else if (map[p.x][p.y] == 4) {
-				for (int i = 1; i < 3; i++) {
-					int nx = p.x + dx[i];
-					int ny = p.y + dy[i];
-					if (check(nx, ny)) {
-						v[nx][ny] = true;
-						q.offer(new Point(nx, ny));
-					}
-				}
-			}
-			else if (map[p.x][p.y] == 5) {
-				for (int i = 0; i < 4; i+=2) {
-					int nx = p.x + dx[i];
-					int ny = p.y + dy[i];
-					if (check(nx, ny)) {
-						v[nx][ny] = true;
-						q.offer(new Point(nx, ny));
-					}
-				}
-			}
-			else if (map[p.x][p.y] == 5) {
-				for (int i = 0; i < 4; i+=2) {
-					int nx = p.x + dx[i];
-					int ny = p.y + dy[i];
-					if (check(nx, ny)) {
-						v[nx][ny] = true;
-						q.offer(new Point(nx, ny));
-					}
-				}
-				
-			}
-			else if (map[p.x][p.y] == 6) {
-				for (int i = 0; i < 4; i+=3) {
-					int nx = p.x + dx[i];
-					int ny = p.y + dy[i];
-					if (check(nx, ny)) {
-						v[nx][ny] = true;
-						q.offer(new Point(nx, ny));
-					}
-				}
-				
-			}
-			else if (map[p.x][p.y] == 7) {
-				for (int i = 1; i < 4; i+=2) {
-					int nx = p.x + dx[i];
-					int ny = p.y + dy[i];
-					if (check(nx, ny)) {
-						v[nx][ny] = true;
-						q.offer(new Point(nx, ny));
-					}
-				}
-				
-			}
+			int size = q.size();
 			
-		cnt++;
+			for(int k=0;k<size;k++) {
+				Point p = q.poll();
+				int num = map[p.x][p.y];
+				for(int i=0;i<4;i++) {
+					int nx = p.x+dx[i];
+					int ny = p.y+dy[i];
+					if(check(nx,ny)) {
+						int next = map[nx][ny];
+						if(i==0) {
+							if(num==1||num==2||num==5||num==6) {
+								if(next==1||next==2||next==4||next==7) {
+									v[nx][ny]=true;
+									q.offer(new Point(nx, ny));
+								}
+							}
+						}
+						else if(i==1) {
+							if(num==1||num==2||num==4||num==7) {
+								if(next==1||next==2||next==5||next==6) {
+									v[nx][ny]=true;
+									q.offer(new Point(nx, ny));
+								}
+							}
+						}
+						else if(i==2) {
+							if(num==1||num==3||num==4||num==5) {
+								if(next==1||next==3||next==6||next==7) {
+									v[nx][ny]=true;
+									q.offer(new Point(nx, ny));
+								}
+							}
+						}
+						else if(i==3) {
+							if(num==1||num==3||num==6||num==7) {
+								if(next==1||next==3||next==4||next==5) {
+									v[nx][ny]=true;
+									q.offer(new Point(nx, ny));
+								}
+							}
+						}
+					}
+				}
+
+			}
+			cnt++;
+			
+		
 	}
 	}
 
