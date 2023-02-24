@@ -23,6 +23,11 @@ public class 컨테이너벨트위의로봇 {
 			this.durability = durability;
 			this.robot = robot;
 		}
+		@Override
+		public String toString() {
+			return "Point [durability=" + durability + ", robot=" + robot + "]";
+		}
+		
 		
 	}
 	public static void main(String[] args) throws Exception {
@@ -35,13 +40,13 @@ public class 컨테이너벨트위의로봇 {
 		down_deque = new LinkedList<Point>();
 		st = new StringTokenizer(br.readLine());
 		for (int i = 0; i < n; i++) {
-			up_deque.push(new Point(Integer.parseInt(st.nextToken()), false));
+			up_deque.add(new Point(Integer.parseInt(st.nextToken()), false));
 		}
 		for (int i = 0; i < n; i++) {
 
-			down_deque.push(new Point(Integer.parseInt(st.nextToken()), false));
+			down_deque.add(new Point(Integer.parseInt(st.nextToken()), false));
 		}
-
+		
 		while (true) {
 			// 1번
 			//로봇과 벨트가 한칸씩 움직인다
@@ -49,7 +54,7 @@ public class 컨테이너벨트위의로봇 {
 			down_deque.addFirst(up_deque.pollLast());
 
 			robotDown();
-
+			
 			// 2번
 			for (int i = 0; i < n-1; i++) {
 				Point p = up_deque.pollLast();
