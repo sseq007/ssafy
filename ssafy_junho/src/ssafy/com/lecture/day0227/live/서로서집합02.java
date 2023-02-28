@@ -1,11 +1,11 @@
-package ssafy.com.lecture.day0227;
+package ssafy.com.lecture.day0227.live;
 
 /*
  * 배열을 이용하여 서솔소집합을 구성할 수 있습니다.
  * 
  * 
  * */
-public class 서로서집합03 {
+public class 서로서집합02 {
 
 	static int n =10;
 	

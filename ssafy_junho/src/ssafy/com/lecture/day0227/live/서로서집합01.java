@@ -1,4 +1,4 @@
-package ssafy.com.lecture.day0227;
+package ssafy.com.lecture.day0227.live;
 
 /*
  * 트리를 서로서개념을 구현

@@ -62,7 +62,7 @@ public class 감시 {
 			return;
 		}
 		
-		for(int i=0;i<ar)
+//		for(int i=0;i<ar)
 		
 	}
 }
