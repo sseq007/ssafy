@@ -68,6 +68,7 @@ public class 톱니바퀴 {
 			if(v[idx_left]) {
 				dir*=-1;
 				
+				
 				rotate_gear(idx_left, dir);
 			}
 			
