@@ -42,19 +42,24 @@ public class 게리맨더링 {
 				
 			}
 		}
-		
+		//부분집합 구하기
 		powerset(0);
-		System.out.println(min_diff);
+		System.out.println(min_diff==Integer.MAX_VALUE?-1:min_diff);
 	}
+	
 	private static void powerset(int idx) {
+		//basis part
 		if(idx==n) {
 			cnt=0;
+			//모두 True인 경우와 모두 False인 경우 제외
 			if(allFalse()||allTrue()) return;
 //			System.out.println(Arrays.toString(v));
+			
 			v2 = new boolean[n+1];
 			for (int i = 0; i < v.length; i++) {
 				if(v[i]&&!v2[i+1]) {
 					dfs(i+1);
+					cnt++;
 				}	
 			}
 			
@@ -62,12 +67,15 @@ public class 게리맨더링 {
 			for (int i = 0; i < v.length; i++) {
 				if(!v[i]&&!v2[i+1]) {
 					dfs2(i+1);
+					cnt++;
 				}
 				
 			}
 			int sum1=0;
 			int sum2=0;
-			if(cnt==n) {
+			//나눈 영역이 2일 경우
+			if(cnt==2) {
+				//인구수차이 최소값 구하기
 				for (int i = 0; i < v.length; i++) {
 					if(v[i]) sum1+=population[i];
 					else sum2+=population[i];
@@ -77,12 +85,13 @@ public class 게리맨더링 {
 
 			return;
 		}
+		//inductive part
 		v[idx] = true;
 		powerset(idx + 1);
 		v[idx] = false;
 		powerset(idx + 1);
 	}
-
+	//False인 영역 탐색
 	private static void dfs2(int idx) {
 		v2[idx] = true;
 
@@ -90,13 +99,12 @@ public class 게리맨더링 {
 		while (iter.hasNext()) {
 			int next = iter.next();
 			if (!v2[next] && !v[next - 1]) {
-				dfs(next);
-				cnt++;
+				dfs2(next);
 			}
 		}
 
 	}
-
+	//True인 영역 탐색
 	private static void dfs(int idx) {
 		v2[idx] = true;
 
@@ -105,7 +113,6 @@ public class 게리맨더링 {
 			int next = iter.next();
 			if(!v2[next]&&v[next-1]) {
 				dfs(next);
-				cnt++;				
 			}
 		}
 		
