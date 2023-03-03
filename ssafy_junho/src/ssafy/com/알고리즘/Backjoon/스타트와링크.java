@@ -29,7 +29,14 @@ public class 스타트와링크 {
 	private static void comb(int idx, int s) {
 
 		if(idx ==team_n) {
-			System.out.println(Arrays.toString(v));
+			int team1=0;
+			int team2=0;
+			for (int i = 0; i < v.length; i++) {
+				if(v[i]) {
+					
+				}
+			}
+			
 			return;
 		}
 		
