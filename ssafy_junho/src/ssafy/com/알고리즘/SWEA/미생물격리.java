@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import java.util.StringTokenizer;
 
@@ -34,7 +35,7 @@ public class 미생물격리 {
 	static int n,m,k;
 	static int[][] map;
 	static ArrayList<Point> data;
-	static HashSet<Integer> set;
+	static List<Integer>[][] list;
 	static StringTokenizer st;
 	public static void main(String[] args) throws Exception, Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -46,6 +47,12 @@ public class 미생물격리 {
 			m = Integer.parseInt(st.nextToken());
 			k = Integer.parseInt(st.nextToken());
 			map = new int[n][n];
+			list = new ArrayList[n][n];
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n; j++) {
+					list[i][j]=new ArrayList<Integer>();
+				}
+			}
 			data = new ArrayList<Point>();
 			for (int i = 0; i < k; i++) {
 				st = new StringTokenizer(br.readLine());
@@ -61,6 +68,7 @@ public class 미생물격리 {
 				
 				for (int i = 0; i < k; i++) {
 					Point p = data.get(i);
+//					System.out.println(p.toString());
 					if(p.cnt==0) {
 						continue;
 					}
@@ -73,11 +81,13 @@ public class 미생물격리 {
 							p.y=ny;
 							p.cnt=p.cnt/2;
 							p.dir=2;
+							list[nx][ny].add(i);
 						}else {
 							p.x=nx;
 							p.y=ny;
+							list[nx][ny].add(i);
 						}
-						System.out.println("상"+p.toString());
+//						System.out.println("상"+p.toString());
 					}
 					//하
 					else if(p.dir==2) {
@@ -88,11 +98,13 @@ public class 미생물격리 {
 							p.y=ny;
 							p.cnt=p.cnt/2;
 							p.dir=1;
+							list[nx][ny].add(i);
 						}else {
 							p.x=nx;
 							p.y=ny;
+							list[nx][ny].add(i);
 						}
-						System.out.println("하"+p.toString());
+//						System.out.println("하"+p.toString());
 					}
 					//좌
 					else if(p.dir==3) {
@@ -103,11 +115,15 @@ public class 미생물격리 {
 							p.y=ny;
 							p.cnt=p.cnt/2;
 							p.dir=4;
+							list[nx][ny].add(i);
+
 						}else {
 							p.x=nx;
 							p.y=ny;
+							list[nx][ny].add(i);
+
 						}
-						System.out.println("좌"+p.toString());
+//						System.out.println("좌"+p.toString());
 					}
 					//우
 					else  {
@@ -118,82 +134,76 @@ public class 미생물격리 {
 							p.y=ny;
 							p.cnt=p.cnt/2;
 							p.dir=3;
+							list[nx][ny].add(i);
+
 						}else {
 							p.x=nx;
 							p.y=ny;
+							list[nx][ny].add(i);
+
 						}
-						System.out.println("우"+p.toString());
+//						System.out.println("우"+p.toString());
 					}
 				}
-				samecheck();
-				if(!set.isEmpty()) {
-					Iterator<Integer> list = set.iterator();
-					System.out.println(set.toString());
-					int max_cnt = Integer.MIN_VALUE;
-					int sum=0;
-					while(list.hasNext()) {
-						int next = list.next();
-						sum+=next;
-						max_cnt=Math.max(max_cnt, next);
-					}
-					while(list.hasNext()) {
-						int next = list.next();
-						
-						for (int j = 0; j < data.size(); j++) {
-							if(data.get(j).cnt==next) {
-								if(data.get(j).cnt==max_cnt) {
-									
-									data.get(j).cnt=sum;
+				
+				
+				for (int a = 0; a < n; a++) {
+					for (int b = 0; b < n; b++) {
+						int sum=0;
+						int max_val= Integer.MIN_VALUE;
+						int max_idx=0;
+						if(list[a][b].size()>=2) {
+							for (int c = 0; c < list[a][b].size(); c++) {
+								int num = list[a][b].get(c);
+								sum+=data.get(num).cnt;
+								if(max_val<data.get(num).cnt) {
+									max_val = data.get(num).cnt;
+									max_idx = num;
+								}
+							}
+							
+							for (int c = 0; c < list[a][b].size(); c++) {
+								if(list[a][b].get(c)==max_idx) {
+									data.get(list[a][b].get(c)).cnt = sum;
 								}else {
 									
-									data.get(j).cnt=0;
+									data.get(list[a][b].get(c)).cnt=0;
 								}
 							}
 							
 						}
 					}
-					
-					
 				}
+//				print(list);
+				clear(list);
 				m--;
 			}
 			int anw=0;
-			System.out.println(data.toString());
-			for (int i = 0; i < n; i++) {
+//			System.out.println(data.toString());
+			for (int i = 0; i < data.size(); i++) {
 				if(data.get(i).cnt!=0) {
 					anw+=data.get(i).cnt;
+//					System.out.println(data.get(i).cnt);
+					
 				}
 			}
-			System.out.println(anw);
+			
+			System.out.println("#"+tc+" "+anw);
 			
 			
 		}
 		
 	}
 	
-	private static boolean arange(int nx, int ny) {
-		
-		return false;
+	private static void clear(List<Integer>[][] list2) {
+		for (int i = 0; i < list2.length; i++) {
+			for (int j = 0; j < list2[i].length; j++) {
+				list[i][j].clear();
+			}
+		}
 	}
 
-	private static void samecheck() {
-		set = new HashSet<>();
-		for (int i = 0; i < n-1; i++) {
-			for (int j = i+1; j < n; j++) {
-				int a = data.get(i).x;
-				int b = data.get(i).y;
-				int c = data.get(j).x;
-				int d = data.get(j).y;
-				if(a==c&&b==d) {
-					set.add(data.get(i).cnt);
-					set.add(data.get(j).cnt);
-				}
-			}
-			
-		}
-		
-		
-	}
+	
 
 	private static boolean redcheck(int nx, int ny) {
 		if(0>nx||nx>=n||0>ny||ny>=n) {
@@ -214,10 +224,10 @@ public class 미생물격리 {
 		}
 		
 	}
-	private static void print(int[][] map) {
-		for (int i = 0; i < map.length; i++) {
-			for (int j = 0; j < map[i].length; j++) {
-				System.out.print(map[i][j]+" ");
+	private static void print(List<Integer>[][] list2) {
+		for (int i = 0; i < list2.length; i++) {
+			for (int j = 0; j < list2[i].length; j++) {
+				System.out.print(list2[i][j]+" ");
 			}
 			System.out.println();
 		}
